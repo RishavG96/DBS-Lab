@@ -1,0 +1,10 @@
+E:\New folder\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe.config
+E:\New folder\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe
+E:\New folder\BankingApplication\BankingApplication\bin\Debug\BankingApplication.pdb
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csprojResolveAssemblyReference.cache
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form1.resources
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Login.resources
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Properties.Resources.resources
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csproj.GenerateResource.Cache
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.exe
+E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.pdb
