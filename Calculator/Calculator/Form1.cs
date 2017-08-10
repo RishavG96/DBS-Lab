@@ -122,21 +122,55 @@ namespace Calculator
 
         private void equals_Click(object sender, EventArgs e)
         {
-            num1 = Convert.ToDouble(n1);
-            num2 = Convert.ToDouble(n2);
-            if (n1.Equals(""))
+           
+            if (n1.Equals("")&& !(op.Equals("sin") || op.Equals("cos") || op.Equals("tan")))
                 MessageBox.Show("Enter number first!");
             else
-            {
+            { 
                 if (op.Equals("sin") || op.Equals("cos") || op.Equals("tan"))
                 {
-
+                    num2 = Convert.ToDouble(n2);
+                    double value = 0.0;
+                    if (op.Equals("sin"))
+                    {
+                        value = Math.Sin((num2 * 180) / Math.PI);
+                    }
+                    if (op.Equals("cos"))
+                    {
+                        value = Math.Cos((num2 * 180) / Math.PI);
+                    }
+                    if (op.Equals("tan"))
+                    {
+                        value = Math.Tan((num2 * 180) / Math.PI);
+                    }
+                    textBox1.Text = value+"";
                 }
                 else
                 {
                     if (op.Equals("+") || op.Equals("-") || op.Equals("*") || op.Equals("/") || op.Equals("pow"))
                     {
-
+                        num1 = Convert.ToDouble(n1);
+                        num2 = Convert.ToDouble(n2);
+                        if(op.Equals("+"))
+                        {
+                            textBox1.Text = (num1 + num2)+"";
+                        }
+                        if (op.Equals("-"))
+                        {
+                            textBox1.Text = (num1 - num2) + "";
+                        }
+                        if (op.Equals("*"))
+                        {
+                            textBox1.Text = (num1 * num2) + "";
+                        }
+                        if (op.Equals("/"))
+                        {
+                            textBox1.Text = (num1 / num2) + "";
+                        }
+                        if (op.Equals("pow"))
+                        {
+                            textBox1.Text = Math.Pow(num1,num2)+"";
+                        }
                     }
                     else
                     {
@@ -196,7 +230,7 @@ namespace Calculator
 
         private void sin_Click(object sender, EventArgs e)
         {
-            str = str + "str";
+            str = str + "sin";
             textBox1.Text = str;
             if (op.Equals(""))
             {
