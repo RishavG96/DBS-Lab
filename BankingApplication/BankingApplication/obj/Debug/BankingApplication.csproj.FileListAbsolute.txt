@@ -8,3 +8,15 @@ E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication
 E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csproj.GenerateResource.Cache
 E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.exe
 E:\New folder\BankingApplication\BankingApplication\obj\Debug\BankingApplication.pdb
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe.config
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\bin\Debug\BankingApplication.exe
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\bin\Debug\BankingApplication.pdb
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csprojResolveAssemblyReference.cache
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Form1.resources
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Login.resources
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Properties.Resources.resources
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.csproj.GenerateResource.Cache
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.exe
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.pdb
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.ChangePwd.resources
+D:\Semester 5\DBS Lab\BankingApplication\BankingApplication\obj\Debug\BankingApplication.Transfer.resources
