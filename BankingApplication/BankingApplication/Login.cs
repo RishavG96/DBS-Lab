@@ -12,7 +12,9 @@ namespace BankingApplication
 {
     public partial class Login : Form
     {
+        public static String dates="05-08-2017";
         public static double balance=1000.0;
+        public static double trans = 170;
         public Login()
         {
             InitializeComponent();
@@ -26,8 +28,11 @@ namespace BankingApplication
         {
             name.Text ="Hello "+Form1.username+"!";
             label4.Text = balance+"";
-            String res = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-            label8.Text = "01-08-2017\n02-08-2017\n03-08-2017\n04-08-1997\n05-08-1997";
+            label5.Text = dates;
+            label6.Text = dates;
+            label10.Text = trans+"";
+            label8.Text = "01-08-2017\n02-08-2017\n03-08-2017\n04-08-1997";
+            label3.Text = "100\n150\n90\n500";
         }
 
         private void button1_Click(object sender, EventArgs e)

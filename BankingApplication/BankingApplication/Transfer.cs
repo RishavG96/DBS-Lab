@@ -21,7 +21,9 @@ namespace BankingApplication
         {
             if (!textBox4.Text.Equals(""))
             {
+                Login.dates = dateTimePicker1.Value.ToString("dd-MM-yyyy");
                 Login.balance -= Convert.ToDouble(textBox4.Text);
+                Login.trans = Convert.ToDouble(textBox4.Text);
                 MessageBox.Show("Amount Transferred : " + textBox4.Text + "\n" + "Current Balance :" + Login.balance);
                 this.Hide();
                 new Login().Show();
