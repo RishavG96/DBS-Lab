@@ -1,0 +1,115 @@
+SQL> create table PERSON3224(
+driver_id varchar(30) primary key,
+name varchar(50),
+Address varchar(100));
+
+SQL> create table CAR3224(
+  2  regno varchar(20) primary key,
+  3  model varchar(30),
+  4  Year int);
+
+Table created.
+
+SQL> create table ACCIDENT3224(
+  2  report_number int primary key,
+  3  accd_date date,
+  4  location varchar(50));
+
+Table created.
+
+SQL> create table OWNS3224(
+  2  driver_id varchar(30),
+  3  regno varchar(20),
+  4  primary key(driver_id, regno),
+  5  foreign key(driver_id) references PERSON3224(driver_id),
+  6  foreign key(regno) references CAR3224(regno));
+
+Table created.
+
+SQL> create table PARTICIPATED3224(
+  2  driver_id varchar(30),
+  3  regno varchar(20),
+  4  report_number int,
+  5  damage_amount int,
+  6  primary key(driver_id,regno,report_number),
+  7  foreign key(driver_id) references PERSON3224(driver_id),
+  8  foreign key(regno) references CAR3224(regno),
+  9  foreign key(report_number) references ACCIDENT3224(report_number));
+
+Table created.
+
+SQL> insert into PERSON3224 values(
+  2  '&driver_id','&name','&Address');
+Enter value for driver_id: www
+Enter value for name: ede
+Enter value for address: edef
+old   2: '&driver_id','&name','&Address')
+new   2: 'www','ede','edef')
+
+1 row created.
+
+SQL> INSERT into CAR3224 VALUES(
+  2  '&regno','&model',&Year);
+Enter value for regno: C210
+Enter value for model: car1
+Enter value for year: 2001
+old   2: '&regno','&model',&Year)
+new   2: 'C210','car1',2001)
+
+1 row created.
+
+SQL> insert into ACCIDENT3224 VALUES(
+  2  &report_number,'&accd_date','&location');
+Enter value for report_number: 310
+Enter value for accd_date: 02-May-2017
+Enter value for location: Manipal
+old   2: &report_number,'&accd_date','&location')
+new   2: 310,'02-May-2017','Manipal')
+
+1 row created.
+
+SQL> insert into OWNS3224 values(
+  2  '&driver_id','&regno');
+Enter value for driver_id: D110
+Enter value for regno: C211
+old   2: '&driver_id','&regno')
+new   2: 'D110','C211')
+
+1 row created.
+
+SQL> insert into PARTICIPATED3224 VALUES(
+  2  '&driver_id','&regno',&report_number,&damage_amount);
+Enter value for driver_id: D110
+Enter value for regno: C211
+Enter value for report_number: 310
+Enter value for damage_amount: 1000
+old   2: '&driver_id','&regno',&report_number,&damage_amount)
+new   2: 'D110','C211',310,1000)
+
+1 row created.
+
+SQL> update PARTICIPATED3224
+  2  SET damage_amount=25000
+  3  where regno='C212' and report_number=312;
+
+1 row updated.
+
+SQL> delete from PARTICIPATED3224 where report_number=314;
+
+1 row deleted.
+
+SQL> delete from ACCIDENT3224 where report_number=314;
+
+1 row deleted.
+
+SQL> ALTER TABLE PARTICIPATED3224 ADD damage_extent varchar(40);
+
+Table altered.
+
+SQL> ALTER TABLE PARTICIPATED3224 DROP COLUMN damage_extent;
+
+Table altered.
+
+SQL> alter table PARTICIPATED3224 add check(damage_amount>=1000);
+
+Table altered.
