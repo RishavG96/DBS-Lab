@@ -40,9 +40,9 @@ Table created.
 
 SQL> insert into PERSON3224 values(
   2  '&driver_id','&name','&Address');
-Enter value for driver_id: www
-Enter value for name: ede
-Enter value for address: edef
+Enter value for driver_id: D110
+Enter value for name: Vaibhav
+Enter value for address: 214
 old   2: '&driver_id','&name','&Address')
 new   2: 'www','ede','edef')
 
@@ -106,7 +106,7 @@ SQL> ALTER TABLE PARTICIPATED3224 ADD damage_extent varchar(40);
 
 Table altered.
 
-SQL> ALTER TABLE PARTICIPATED3224 DROP COLUMN damage_extent;
+SQL> ALTER TABLE ACCIDENT3224 DROP COLUMN location;
 
 Table altered.
 
