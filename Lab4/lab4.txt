@@ -1,0 +1,41 @@
+SQL> SELECT COUNT(DISTINCT driver_id) AS TOTAL
+  2  from PARTICIPATED3224, ACCIDENT3224
+  3  where PARTICIPATED3224.report_number=ACCIDENT3224.report_number and extract
+ (year from accd_date)='2008';
+
+     TOTAL
+----------
+         2
+
+SQL> SELECT COUNT(driver_id) as Numbers
+  2  from PARTICIPATED3224, CAR3224
+  3  where PARTICIPATED3224.REGNO=car3224.REGNO AND car3224.model='car2';
+
+   NUMBERS
+----------
+         2
+
+SQL> select name as Owner_name, count(person3224.driver_id) as NoofAccident, sum
+(damage_amount) as TotalDamage
+  2        from person3224, participated3224
+  3        where person3224.driver_id =  participated3224.driver_id
+  4        group by (name,person3224.driver_id)
+  5  order by (TotalDamage) desc;
+
+OWNER_NAME                                         NOOFACCIDENT TOTALDAMAGE
+-------------------------------------------------- ------------ -----------
+Prakhar                                                       1       25000
+Dhruv                                                         1        4000
+Shyamal                                                       1        2000
+VAIBHAV                                                       1        1000
+
+
+SQL> select distinct(name)
+  2  from person3224, participated3224
+  3  where person3224.driver_id=participated3224.driver_id
+  4  group by(name)
+  5  having count(participated3224.driver_id)>2;
+
+NAME
+--------------------------------------------------
+Prakhar
