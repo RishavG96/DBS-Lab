@@ -7,7 +7,7 @@ create table orders3224(
 order_id int,
 odate Date,
 cust_id int,
-ordamt: int,
+ordamt int,
 primary key(order_id,cust_id),
 foreign key cust_id references customer3224
 on delete cascade
