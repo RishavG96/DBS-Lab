@@ -36,7 +36,7 @@ shipdate Date,
 primary key(order_id,warehouse_id),
 foreign key (order_id) references orders3224(order_id)
 on delete cascade,
-foreign key (warehouse_id) references warehouse3224
+foreign key (warehouse_id) references warehouse3224(warehouse_id)
 on delete cascade);
 
 insert into customer3224 values (
