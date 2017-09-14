@@ -21,7 +21,7 @@ order_id int,
 qty int,
 item_id int,
 primary key(order_id,item_id),
-foreign key item_id references item3224(item_id)
+foreign key (item_id) references item3224(item_id)
 on delete cascade);
 
 create table warehouse3224(
@@ -34,9 +34,9 @@ order_id int,
 warehouse_id int,
 shipdate Date,
 primary key(order_id,warehouse_id),
-foreign key order_id references orders3224(order_id)
+foreign key (order_id) references orders3224(order_id)
 on delete cascade,
-foreign key warehouse_id references warehouse3224
+foreign key (warehouse_id) references warehouse3224
 on delete cascade);
 
 insert into customer3224 values (
