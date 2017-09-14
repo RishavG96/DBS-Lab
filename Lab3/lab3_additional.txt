@@ -9,9 +9,8 @@ odate Date,
 cust_id int,
 ordamt int,
 primary key(order_id,cust_id),
-foreign key cust_id references customer3224
-on delete cascade
-on update cascade);
+foreign key (cust_id) REFERENCES customer3224(cust_id)
+on delete cascade);
 
 create table item3224(
 item_id int primary key,
@@ -22,9 +21,8 @@ order_id int,
 qty int,
 item_id int,
 primary key(order_id,item_id),
-foreign key item_id references item3224
-on delete cascade
-on update cascade);
+foreign key item_id references item3224(item_id)
+on delete cascade);
 
 create table warehouse3224(
 warehouse_id int,
@@ -36,12 +34,10 @@ order_id int,
 warehouse_id int,
 shipdate Date,
 primary key(order_id,warehouse_id),
-foreign key order_id references orders3224
-on delete cascade
-on update cascade,
+foreign key order_id references orders3224(order_id)
+on delete cascade,
 foreign key warehouse_id references warehouse3224
-on delete cascade
-on update cascade);
+on delete cascade);
 
 insert into customer3224 values (
 &cust_id,'&cname','&city');
