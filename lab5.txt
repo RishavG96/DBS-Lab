@@ -1,0 +1,43 @@
+ select course_id
+ from book_adoption3224
+ group by course_id
+ having count(book_isbn)>1;
+
+ COURSE_ID
+----------
+       210
+
+
+select distinct(dept)
+from course3224 natural join enroll3224,text3224
+where enroll3224.book_isbn=text3224.book_isbn and
+publisher='P1';
+
+DEPT
+------------------------------
+CCE
+IT
+
+
+select regno
+from enroll3224 natural join course3224
+group by regno
+having count(regno)>1;
+
+REGNO
+--------------------
+R110
+
+
+
+(select regno from student3224)
+minus
+(select distinct(regno) from enroll3224);
+
+REGNO
+--------------------
+R111
+R114
+
+
+
