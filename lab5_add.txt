@@ -1,0 +1,40 @@
+select cust_id from customer3224 where city is NULL;
+
+   CUST_ID
+----------
+       115
+
+ with sumval(cust_id,value) as
+ (select cust_id, sum(item_id)
+ from orders3224 natural join order_items3224
+ group by cust_id),
+ maxval(val) as
+ (select max(value)
+ from sumval)
+ select cust_id
+ from sumval
+ where value=(select val from maxval);
+
+   CUST_ID
+----------
+       113
+
+
+select order_id
+from shipment3224
+where shipdate>'30-Jan-2016';
+
+
+  ORDER_ID
+----------
+       213
+       214
+
+select item_id
+from item3224
+where item_id not in (select item_id from order_items3224);
+
+   ITEM_ID
+----------
+       315
+
