@@ -1,0 +1,42 @@
+6.1
+create or replace function totalaccidents
+(year in int)
+return int as
+counter int;
+begin
+select count(report_number) into counter
+from accident3224
+where extract(year from accd_date)=year;
+return counter;
+end;
+/
+
+SQL> select totalaccidents(2017)from Dual;
+
+TOTALACCIDENTS(2017)
+--------------------
+                   4
+
+6.2
+create or replace procedure totaldamage
+(driver in varchar,year in int) is
+total1 int;
+name varchar(50);
+begin 
+select driver_id, sum(damage_amount) into name,total1
+from participated3224 natural join accident3224
+where driver_id=driver and extract(year from accd_date)=year
+group by (driver_id);
+DBMS_OUTPUT.PUT_LINE(name||'has damage'||total1);
+end;
+/
+
+Procedure created.
+SQL> SET SERVEROUTPUT ON;
+SQL> execute totaldamage('D112',2008);
+D112has damage220000
+
+PL/SQL procedure successfully completed.
+
+
+6.3
