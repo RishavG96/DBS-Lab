@@ -1,0 +1,48 @@
+2.
+create or replace trigger driveraccd
+after insert on participated3224
+for each row
+declare
+id1 varchar2(30);
+name1 varchar2(50);
+address1 varchar2(100);
+begin
+select driver_id, name,address into id1,name1,address1
+from person3224
+where :new.driver_id=driver_id;
+DBMS_OUTPUT.PUT_LINE('Driver id='||id1||name1||address1);
+end;
+/
+
+5.
+create or replace procedure displayaccd(loc in varchar2)
+is
+r int;
+a date;
+begin
+select report_number, accd_date into r,a 
+from accident3224
+where location=loc;
+dbms_output.put_line(r||a);
+end;
+/
+
+
+312 04-JUN-17
+
+6.
+create or replace procedure custinfo
+is
+cursor cust is
+select * from orders3224 natural join customer3224 where ordamt>100;
+curs cust%rowtype;
+begin
+open cust;
+loop
+fetch cust into curs;
+exit when cust%notfound;
+insert into T1 values(curs.cust_id,curs.cname,curs.city);
+end loop;
+close cust;
+end;
+/
